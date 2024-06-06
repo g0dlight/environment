@@ -1,0 +1,11 @@
+function parse_git_branch() {
+    git branch 2> /dev/null | sed -n -e 's/^\* \(.*\)/(\1)/p'
+}
+
+function gitprune() {
+  git remote prune origin;
+  git fetch -p; git branch -r | awk '{print $1}' | egrep -v -f /dev/fd/0 <(git branch -vv | grep origin) | awk '{print $1}' | xargs git branch -d
+}
+
+setopt PROMPT_SUBST
+export PROMPT='%B%1~%b %F{202}$(parse_git_branch)%f %# '
