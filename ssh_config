@@ -1,0 +1,8 @@
+Host *
+    Hostname example.com
+    Port 22
+	User orel.hadad
+	ServerAliveInterval 30
+	AddKeysToAgent yes
+	UseKeychain yes
+	IdentityFile ~/.ssh/id_ed25519
