@@ -1,0 +1,1 @@
+Edit `/etc/zshenv` and add it `ZDOTDIR=$HOME/.config/zsh`
