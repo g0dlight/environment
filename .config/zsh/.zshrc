@@ -9,6 +9,11 @@ randsecret() {
   echo "$secret"
 }
 
+decodebase64() {
+  local input="$1"
+  echo "$input" | base64 --decode
+}
+
 source  ~/.config/zsh/githelper
 
 WELCOME_USER="%F{40}Login as %n@%M%f"
